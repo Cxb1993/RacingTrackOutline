@@ -216,6 +216,26 @@
 		E4EF565F1D8B7240002FC5AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/usr/local/Cellar/opencv/2.4.13/include/**";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/opencv/2.4.13/lib/**";
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_calib3d",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_ts",
+					"-lopencv_video",
+					"-lopencv_videostab",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -223,6 +243,26 @@
 		E4EF56601D8B7240002FC5AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/usr/local/Cellar/opencv/2.4.13/include/**";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/opencv/2.4.13/lib/**";
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_calib3d",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_ts",
+					"-lopencv_video",
+					"-lopencv_videostab",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -246,6 +286,7 @@
 				E4EF56601D8B7240002FC5AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
