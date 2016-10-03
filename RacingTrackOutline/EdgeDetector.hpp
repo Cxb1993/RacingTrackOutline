@@ -24,7 +24,8 @@ private:
     
 public:
     void setKernelSize(int kernelS);
-    void setThreshold (int edgeT,int lowT);
+    void setLowThreshold (int lowT);
+    void setEdgeThreshold(int edgeT);
     void setWindowname(char* Window_Name);
     void cannyThreshold(cv::Mat src, int,void*);
     

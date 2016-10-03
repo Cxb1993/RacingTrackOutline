@@ -18,8 +18,9 @@
 #include <EdgeDetector.hpp>
 
 cv::Mat Video;
-char* WindowName;
-
+char* WindowName = "Video";
+EdgeDetector edgeDetector;
+int lowThreshold,edgeThreshold;
 int main(int argc, const char * argv[]) {
     cv::VideoCapture cap("/Users/marvingonaq/Documents/RacingTrackOutline/RacingTrackOutline/Full\ Lap\ Nurburgring\ Nissan\ -\ GTR.mp4");
     if(!cap.isOpened()){
@@ -29,7 +30,7 @@ int main(int argc, const char * argv[]) {
     cap.set(CV_CAP_PROP_POS_MSEC, 300);
     double fps = cap.get(CV_CAP_PROP_FPS);
     std::cout << "Frames per Second: " << fps << std::endl;
-    cv::namedWindow("Video",CV_WINDOW_AUTOSIZE);
+    cv::namedWindow(WindowName,CV_WINDOW_AUTOSIZE);
     while(1){
         cv::Mat frame;
         bool bSuccess = cap.read(frame);
@@ -38,10 +39,17 @@ int main(int argc, const char * argv[]) {
             std::cout << "Cannot get frame from Video" << std::endl;
             break;
         }
+        edgeDetector.setWindowname(WindowName);
+        edgeDetector.setKernelSize(3);
+        cv::createTrackbar("Min Threshold", WindowName, &lowThreshold, 100);
+        cv::createTrackbar("Edge Threshold", WindowName, &edgeThreshold, 100);
+        edgeDetector.setEdgeThreshold(edgeThreshold);
+        edgeDetector.setLowThreshold(lowThreshold);
+        edgeDetector.cannyThreshold(frame,0,0);
         //imshow("Video",frame);//Show current frame in "Video" window
         if(cv::waitKey(30)==27){
             std::cout << "'ESC' key has been pressed, closing video." << std::endl;
-            cv:cvDestroyWindow("Video");
+            cv:cvDestroyWindow(WindowName);
             break;
         }
     }

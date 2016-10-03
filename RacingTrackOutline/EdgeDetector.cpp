@@ -12,9 +12,12 @@ void EdgeDetector::setKernelSize(int kernelS){
     kernelSize = kernelS;
 }
 
-void EdgeDetector::setThreshold(int edgeT, int lowT){
-    edgeThreshold = edgeT;
+void EdgeDetector::setLowThreshold(int lowT){
     lowThreshold = lowT;
+}
+
+void EdgeDetector::setEdgeThreshold(int edgeT){
+    edgeThreshold = edgeT;
 }
 
 void EdgeDetector::setWindowname(char *Window_Name){
@@ -26,5 +29,6 @@ void EdgeDetector::cannyThreshold(cv::Mat src,int,void*){
     cv::blur(src_gray,detetected_edges,cv::Size(3,3));
     cv::Canny(detetected_edges, detetected_edges, lowThreshold, lowThreshold*ratio, kernelSize);
     dst = cv::Scalar::all(0);
+    src.copyTo(dst, detetected_edges);
     cv::imshow(WindowName, dst);
 }
