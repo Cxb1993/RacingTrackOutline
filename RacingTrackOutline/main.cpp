@@ -15,9 +15,10 @@
 #include <iostream>
 #include <opencv.hpp>
 #include <highgui.hpp>
+#include <EdgeDetector.hpp>
 
 cv::Mat Video;
-
+char* WindowName;
 
 int main(int argc, const char * argv[]) {
     cv::VideoCapture cap("/Users/marvingonaq/Documents/RacingTrackOutline/RacingTrackOutline/Full\ Lap\ Nurburgring\ Nissan\ -\ GTR.mp4");
@@ -37,7 +38,7 @@ int main(int argc, const char * argv[]) {
             std::cout << "Cannot get frame from Video" << std::endl;
             break;
         }
-        imshow("Video",frame);//Show current frame in "Video" window
+        //imshow("Video",frame);//Show current frame in "Video" window
         if(cv::waitKey(30)==27){
             std::cout << "'ESC' key has been pressed, closing video." << std::endl;
             cv:cvDestroyWindow("Video");
