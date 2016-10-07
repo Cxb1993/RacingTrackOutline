@@ -226,6 +226,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "/usr/local/Cellar/opencv/2.4.13/include/**";
 				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/opencv/2.4.13/lib/**";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lopencv_core",
 					"-lopencv_calib3d",
@@ -253,6 +254,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "/usr/local/Cellar/opencv/2.4.13/include/**";
 				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/opencv/2.4.13/lib/**";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lopencv_core",
 					"-lopencv_calib3d",

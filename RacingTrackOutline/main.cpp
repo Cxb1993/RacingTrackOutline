@@ -20,17 +20,19 @@
 cv::Mat Video;
 char* WindowName = "Video";
 EdgeDetector edgeDetector;
-int lowThreshold,edgeThreshold;
+int lowThreshold = 8,edgeThreshold= 1,curFrame;
 int main(int argc, const char * argv[]) {
     cv::VideoCapture cap("/Users/marvingonaq/Documents/RacingTrackOutline/RacingTrackOutline/Full\ Lap\ Nurburgring\ Nissan\ -\ GTR.mp4");
     if(!cap.isOpened()){
         std::cout << "Error while opening file" << std::endl;
         return -1;
     }
-    cap.set(CV_CAP_PROP_POS_MSEC, 300);
+    cap.set(CV_CAP_PROP_POS_MSEC, 2000);
+    cap.set(CV_CAP_PROP_FPS,25);
     double fps = cap.get(CV_CAP_PROP_FPS);
     std::cout << "Frames per Second: " << fps << std::endl;
-    cv::namedWindow(WindowName,CV_WINDOW_AUTOSIZE);
+    cv::namedWindow(WindowName,CV_WINDOW_NORMAL);
+    curFrame = cap.get(CV_CAP_PROP_POS_FRAMES);
     while(1){
         cv::Mat frame;
         bool bSuccess = cap.read(frame);
@@ -39,19 +41,20 @@ int main(int argc, const char * argv[]) {
             std::cout << "Cannot get frame from Video" << std::endl;
             break;
         }
+        cv::resize(frame, frame, cv::Size(1280,720));
         edgeDetector.setWindowname(WindowName);
         edgeDetector.setKernelSize(3);
-        cv::createTrackbar("Min Threshold", WindowName, &lowThreshold, 100);
-        cv::createTrackbar("Edge Threshold", WindowName, &edgeThreshold, 100);
+        cv::createTrackbar("Min Threshold", WindowName, &lowThreshold ,10);
         edgeDetector.setEdgeThreshold(edgeThreshold);
         edgeDetector.setLowThreshold(lowThreshold);
         edgeDetector.cannyThreshold(frame,0,0);
-        //imshow("Video",frame);//Show current frame in "Video" window
-        if(cv::waitKey(30)==27){
-            std::cout << "'ESC' key has been pressed, closing video." << std::endl;
+        //imshow(WindowName,frame);//Show current frame in "Video" window
+        if(cv::waitKey(1)==27){
+            std::cout << "'q' key has been pressed, closing video." << std::endl;
             cv:cvDestroyWindow(WindowName);
             break;
-        }
+         }
+        curFrame++;
     }
     //std::cout << "Using OpenCV" << CV_VERSION << "/n" <<std::endl;
     //std::cout << cv::getBuildInformation();

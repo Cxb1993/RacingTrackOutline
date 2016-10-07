@@ -20,6 +20,7 @@ private:
     int edgeThreshold, lowThreshold, ratio = 3, kernelSize;
     int const maxLowThreshold = 100;
     char* WindowName;
+    cv::vector<cv::Vec4i> lines;
     cv::Mat src_gray,dst,detetected_edges;
     
 public:
