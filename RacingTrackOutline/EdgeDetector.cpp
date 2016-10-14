@@ -37,7 +37,7 @@ void EdgeDetector::cannyThreshold(cv::Mat src,int,void*,int width,int height){
             cv::line(src, cv::Point(lines[i][0], lines[i][1]), cv::Point(lines[i][2], lines[i][3]),cv::Scalar(0,0,255),3,8);
         }
     }
-    dst = cv::Scalar::all(0);
-    src.copyTo(dst, detetected_edges);
+    //dst = cv::Scalar::all(0);
+    src.copyTo(dst, src);
     cv::imshow(WindowName, dst);
 }

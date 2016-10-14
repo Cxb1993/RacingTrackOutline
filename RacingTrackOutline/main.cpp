@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
         std::cout << "Error while opening file" << std::endl;
         return -1;
     }
-    cap.set(CV_CAP_PROP_POS_MSEC, 15000);
+    cap.set(CV_CAP_PROP_POS_MSEC, 150000);
     cap.set(CV_CAP_PROP_FPS,25);
     double fps = cap.get(CV_CAP_PROP_FPS);
     std::cout << "Frames per Second: " << fps << std::endl;
