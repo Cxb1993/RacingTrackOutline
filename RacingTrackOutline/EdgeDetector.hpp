@@ -10,8 +10,11 @@
 #define EdgeDetector_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+
+#include <diffMethods.hpp>
 
 #endif /* EdgeDetector_hpp */
 
@@ -22,12 +25,13 @@ private:
     char* WindowName;
     cv::vector<cv::Vec4i> lines;
     cv::Mat src_gray,dst,detetected_edges;
+    diffMethods diff;
     
 public:
     void setKernelSize(int kernelS);
     void setLowThreshold (int lowT);
     void setEdgeThreshold(int edgeT);
     void setWindowname(char* Window_Name);
-    void cannyThreshold(cv::Mat src, int,void*);
+    void cannyThreshold(cv::Mat src, int,void*, int width, int height);
     
 };

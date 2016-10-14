@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E4517DA01DA2B46000CD4140 /* EdgeDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4517D9E1DA2B46000CD4140 /* EdgeDetector.cpp */; };
+		E4636D471DB0402900325D67 /* diffMethods.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4636D451DB0402900325D67 /* diffMethods.cpp */; };
 		E4EF565B1D8B7240002FC5AC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4EF565A1D8B7240002FC5AC /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		E4517D9E1DA2B46000CD4140 /* EdgeDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeDetector.cpp; sourceTree = "<group>"; };
 		E4517D9F1DA2B46000CD4140 /* EdgeDetector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EdgeDetector.hpp; sourceTree = "<group>"; };
+		E4636D451DB0402900325D67 /* diffMethods.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = diffMethods.cpp; sourceTree = "<group>"; };
+		E4636D461DB0402900325D67 /* diffMethods.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = diffMethods.hpp; sourceTree = "<group>"; };
 		E4EF56571D8B7240002FC5AC /* RacingTrackOutline */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingTrackOutline; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EF565A1D8B7240002FC5AC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +66,8 @@
 				E4EF565A1D8B7240002FC5AC /* main.cpp */,
 				E4517D9E1DA2B46000CD4140 /* EdgeDetector.cpp */,
 				E4517D9F1DA2B46000CD4140 /* EdgeDetector.hpp */,
+				E4636D451DB0402900325D67 /* diffMethods.cpp */,
+				E4636D461DB0402900325D67 /* diffMethods.hpp */,
 			);
 			path = RacingTrackOutline;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4636D471DB0402900325D67 /* diffMethods.cpp in Sources */,
 				E4517DA01DA2B46000CD4140 /* EdgeDetector.cpp in Sources */,
 				E4EF565B1D8B7240002FC5AC /* main.cpp in Sources */,
 			);
